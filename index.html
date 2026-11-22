@@ -7,48 +7,22 @@
   <meta name="description" content="TikTok video analyzer for public video links.">
   <title>TikTok Analyzer</title>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/config.js"></script>
 </head>
 <body>
   <main class="shell">
-    <header class="topbar">
-      <a class="brand" href="/" aria-label="TikTok Analyzer home"><span class="brand-mark">T</span><span>Analyzer<span class="brand-muted"> / TikTok</span></span></a>
-      <span class="status"><i></i> Public video analysis</span>
-    </header>
+    <header class="topbar"><a class="brand" href="/" aria-label="TikTok Analyzer home"><span class="brand-mark">T</span><span>Analyzer<span class="brand-muted"> / TikTok</span></span></a><span class="status"><i></i> Public video analysis</span></header>
     <section class="intro">
-      <p class="eyebrow">VIDEO INSIGHTS</p>
-      <h1>Analyze any<br><span>public TikTok video.</span></h1>
+      <p class="eyebrow">VIDEO INSIGHTS</p><h1>Analyze any<br><span>public TikTok video.</span></h1>
       <p class="subhead">Lihat statistik, engagement, kreator, dan informasi video dari satu tautan.</p>
-      <form id="analyze-form" class="url-form">
-        <label class="sr-only" for="video-url">TikTok video URL</label>
-        <input id="video-url" type="url" placeholder="Tempel tautan TikTok di sini..." autocomplete="url" required>
-        <button id="analyze-button" type="submit"><span>Analyze video</span><b>→</b></button>
-      </form>
-      <p class="hint">Mendukung tautan tiktok.com dan vm.tiktok.com. Akun privat tidak didukung.</p>
-      <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+      <form id="analyze-form" class="url-form"><label class="sr-only" for="video-url">TikTok video URL</label><input id="video-url" type="url" placeholder="Tempel tautan TikTok di sini..." autocomplete="url" required><button id="analyze-button" type="submit"><span>Analyze video</span><b>→</b></button></form>
+      <p class="hint">Mendukung tautan tiktok.com dan vm.tiktok.com. Akun privat tidak didukung.</p><p id="status-message" class="status-message" role="status" aria-live="polite"></p>
     </section>
     <section id="result" class="result hidden" aria-live="polite">
       <div class="section-heading"><div><p class="eyebrow">ANALYSIS RESULT</p><h2>Video overview</h2></div><button id="reset-button" class="text-button" type="button">Analyze another ↗</button></div>
-      <div class="overview">
-        <div class="cover-wrap"><img id="cover" alt="TikTok video cover"><span id="duration" class="duration"></span></div>
-        <div class="video-info">
-          <div class="creator"><img id="avatar" alt="" class="avatar"><div><strong id="creator-name">—</strong><span id="creator-handle">—</span></div></div>
-          <p id="caption" class="caption"></p>
-          <div class="meta-line"><span id="region">Region —</span><span id="posted">Posted —</span></div>
-          <a id="open-video" class="video-link" target="_blank" rel="noopener noreferrer">Open original video ↗</a>
-        </div>
-      </div>
-      <div class="metrics-grid">
-        <article class="metric"><span>Views</span><strong id="views">—</strong><small>Total plays</small></article>
-        <article class="metric"><span>Likes</span><strong id="likes">—</strong><small>Likes received</small></article>
-        <article class="metric"><span>Comments</span><strong id="comments">—</strong><small>Audience replies</small></article>
-        <article class="metric"><span>Shares</span><strong id="shares">—</strong><small>Times shared</small></article>
-        <article class="metric"><span>Saved</span><strong id="saves">—</strong><small>Favorites</small></article>
-        <article class="metric metric-accent"><span>Engagement rate</span><strong id="engagement">—</strong><small>(Likes + comments + shares + saves) / views</small></article>
-      </div>
-      <div class="details-grid">
-        <article class="detail-card"><p class="eyebrow">VIDEO DETAILS</p><h3>Content information</h3><dl><div><dt>Duration</dt><dd id="detail-duration">—</dd></div><div><dt>File size</dt><dd id="file-size">Not provided</dd></div><div><dt>Video ID</dt><dd id="video-id">—</dd></div><div><dt>Published</dt><dd id="detail-date">—</dd></div></dl></article>
-        <article class="detail-card"><p class="eyebrow">STREAM ANALYSIS</p><h3>Technical metadata</h3><dl><div><dt>Resolution</dt><dd>Not provided by source</dd></div><div><dt>Frame rate</dt><dd>Not provided by source</dd></div><div><dt>Bitrate</dt><dd>Not provided by source</dd></div><div><dt>Codec</dt><dd>Not provided by source</dd></div></dl><p class="technical-note">Technical stream analysis is not available from current public metadata response. No values are guessed.</p></article>
-      </div>
+      <div class="overview"><div class="cover-wrap"><img id="cover" alt="TikTok video cover"><span id="duration" class="duration"></span></div><div class="video-info"><div class="creator"><img id="avatar" alt="" class="avatar"><div><strong id="creator-name">—</strong><span id="creator-handle">—</span></div></div><p id="caption" class="caption"></p><div class="meta-line"><span id="region">Region —</span><span id="posted">Posted —</span></div><a id="open-video" class="video-link" target="_blank" rel="noopener noreferrer">Open original video ↗</a></div></div>
+      <div class="metrics-grid"><article class="metric"><span>Views</span><strong id="views">—</strong><small>Total plays</small></article><article class="metric"><span>Likes</span><strong id="likes">—</strong><small>Likes received</small></article><article class="metric"><span>Comments</span><strong id="comments">—</strong><small>Audience replies</small></article><article class="metric"><span>Shares</span><strong id="shares">—</strong><small>Times shared</small></article><article class="metric"><span>Saved</span><strong id="saves">—</strong><small>Favorites</small></article><article class="metric metric-accent"><span>Engagement rate</span><strong id="engagement">—</strong><small>(Likes + comments + shares + saves) / views</small></article></div>
+      <div class="details-grid"><article class="detail-card"><p class="eyebrow">VIDEO DETAILS</p><h3>Content information</h3><dl><div><dt>Duration</dt><dd id="detail-duration">—</dd></div><div><dt>File size</dt><dd id="file-size">Not provided</dd></div><div><dt>Video ID</dt><dd id="video-id">—</dd></div><div><dt>Published</dt><dd id="detail-date">—</dd></div></dl></article><article class="detail-card"><p class="eyebrow">STREAM ANALYSIS</p><h3>Technical metadata</h3><dl><div><dt>Resolution</dt><dd>Not provided by source</dd></div><div><dt>Frame rate</dt><dd>Not provided by source</dd></div><div><dt>Bitrate</dt><dd>Not provided by source</dd></div><div><dt>Codec</dt><dd>Not provided by source</dd></div></dl><p class="technical-note">Technical stream analysis is not available from current public metadata response. No values are guessed.</p></article></div>
       <p class="disclaimer">Data is retrieved from a third-party public metadata service. Counts may be delayed or unavailable. This tool is not affiliated with TikTok.</p>
     </section>
     <footer><span>Independent TikTok Analyzer</span><span>Built for public links</span></footer>
